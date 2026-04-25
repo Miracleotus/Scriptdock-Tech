@@ -1,234 +1,148 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight, ChefHat, Sofa, Bed } from "lucide-react";
-import { motion, Variants } from "framer-motion";
-
-const categories = [
-  {
-    icon: <ChefHat size={28} />,
-    title: "Kitchenware",
-    desc: "Cook and dine with elegance.",
-  },
-  {
-    icon: <Sofa size={28} />,
-    title: "Living Room & Decor",
-    desc: "Add character and cozy comforts.",
-  },
-  {
-    icon: <Bed size={28} />,
-    title: "Bed & Bath",
-    desc: "Transform your private spaces into luxurious sanctuaries.",
-  },
-];
-
-const whyChooseUs = [
-  { title: "Premium Quality", desc: "We source only the finest, most durable materials for products built to last." },
-  { title: "Modern Design", desc: "Thoughtfully designed pieces that elevate your interior styling." },
-  { title: "Exceptional Value", desc: "Luxury living essentials without the luxury markup." },
-];
-
-const process = [
-  { step: "1", title: "Browse & Inspire", desc: "Explore our curated collections to find the perfect pieces for your aesthetic." },
-  { step: "2", title: "Secure Checkout", desc: "Order with confidence using our safe, encrypted payment portal." },
-  { step: "3", title: "Fast Delivery", desc: "We pack your items with care and ship them swiftly to your doorstep." },
-  { step: "4", title: "Enjoy Your Space", desc: "Unbox, decorate, and fall in love with your newly refreshed home." },
-];
-
-const fadeInUp: Variants = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
-const staggerContainer: Variants = {
-  initial: { opacity: 0 },
-  whileInView: { 
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
-  }
-};
-
-const staggerItem: Variants = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
-};
+import { ArrowRight, Code, Layout, ShoppingCart, Repeat, ShieldCheck, Activity } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <main className="bg-brand-dark text-white font-body">
-
-      {/* HERO */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(ellipse at center, rgba(201, 169, 97, 0.12) 0%, transparent 70%)" }} />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10 flex flex-col items-center"
-        >
-          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl">
-            Elevate Your Everyday Living.
+    <div className="min-h-screen flex flex-col">
+      {/* Hero Section */}
+      <section className="bg-purple-900 text-white py-24 md:py-32">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            Architecting Your Digital Future.
           </h1>
-          <p className="text-brand-gray max-w-2xl text-lg mb-10 leading-relaxed">
-            Discover beautifully crafted, functional household items designed to turn your house into a home you love.
+          <p className="text-xl md:text-2xl text-purple-100 mb-10 leading-relaxed">
+            Scriptdock Tech delivers enterprise-grade software solutions, scalable web applications, and stunning corporate websites designed to push your business forward.
           </p>
-          <Link
-            href="/shop"
-            className="bg-brand-teal text-brand-dark px-8 py-4 font-bold tracking-widest uppercase text-sm hover:bg-brand-teal-light transition-all inline-flex items-center gap-2 rounded-full"
-          >
-            Shop the Collection <ArrowRight size={16} />
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/contact" className="bg-white text-purple-900 font-bold px-8 py-4 rounded-md hover:bg-purple-50 transition shadow-lg text-lg">
+              Discuss Your Project
+            </Link>
+            <Link href="/services" className="bg-purple-800 text-white border border-purple-700 font-bold px-8 py-4 rounded-md hover:bg-purple-700 transition shadow-lg text-lg">
+              View Our Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Snippet */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">The Harbor for Your Tech Ideas.</h2>
+          <p className="text-xl text-gray-600 leading-relaxed">
+            At Scriptdock Tech, we don`t write code; we build digital ecosystems. We bridge the gap between complex engineering and intuitive user experiences. Whether you are a startup looking to launch your first MVP or an established enterprise needing to modernize legacy systems, our team of dedicated engineers provides the technical foundation you need to scale securely.
+          </p>
+        </div>
+      </section>
+
+      {/* Core Services */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">Solutions Built for Scale</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="w-12 h-12 bg-purple-100 text-purple-700 flex items-center justify-center rounded-lg mb-6">
+                <Layout size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Web Development</h3>
+              <p className="text-gray-600 leading-relaxed">Fast, responsive, and SEO-optimized websites that serve as the ultimate digital storefront for your brand.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="w-12 h-12 bg-purple-100 text-purple-700 flex items-center justify-center rounded-lg mb-6">
+                <Code size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Custom Software</h3>
+              <p className="text-gray-600 leading-relaxed">Bespoke web and mobile applications tailored precisely to your unique operational workflows.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="w-12 h-12 bg-purple-100 text-purple-700 flex items-center justify-center rounded-lg mb-6">
+                <ShoppingCart size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">E-Commerce Systems</h3>
+              <p className="text-gray-600 leading-relaxed">Powerful, high-converting online stores built with robust inventory and payment architectures.</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+              <div className="w-12 h-12 bg-purple-100 text-purple-700 flex items-center justify-center rounded-lg mb-6">
+                <Repeat size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">API & Integrations</h3>
+              <p className="text-gray-600 leading-relaxed">Seamlessly connecting your favorite software tools to automate your business processes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">The Scriptdock Advantage</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 text-purple-700 flex items-center justify-center rounded-full mx-auto mb-6">
+                <Activity size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Clean, Scalable Code</h3>
+              <p className="text-gray-600">We adhere to the highest industry standards, ensuring your software is maintainable and ready for future growth.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 text-purple-700 flex items-center justify-center rounded-full mx-auto mb-6">
+                <Repeat size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Agile Methodology</h3>
+              <p className="text-gray-600">We build in sprints, providing you with regular updates, transparent communication, and the flexibility to pivot when needed.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 text-purple-700 flex items-center justify-center rounded-full mx-auto mb-6">
+                <ShieldCheck size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Security First</h3>
+              <p className="text-gray-600">Data protection is not an afterthought. We build secure infrastructures designed to protect you and your users from day one.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900">How We Ship Great Software</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-purple-900 text-white font-bold flex items-center justify-center rounded-full mx-auto mb-4 relative z-10 text-xl">1</div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">Discovery & Scoping</h3>
+              <p className="text-gray-600 text-sm">We analyze your business requirements and define a strict technical roadmap.</p>
+            </div>
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-purple-900 text-white font-bold flex items-center justify-center rounded-full mx-auto mb-4 relative z-10 text-xl">2</div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">Design & Architecture</h3>
+              <p className="text-gray-600 text-sm">We create intuitive UI/UX wireframes and map out your database architecture.</p>
+            </div>
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-purple-900 text-white font-bold flex items-center justify-center rounded-full mx-auto mb-4 relative z-10 text-xl">3</div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">Development</h3>
+              <p className="text-gray-600 text-sm">Our full-stack engineers bring the designs to life using modern technology stacks.</p>
+            </div>
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-purple-900 text-white font-bold flex items-center justify-center rounded-full mx-auto mb-4 relative z-10 text-xl">4</div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">QA & Deployment</h3>
+              <p className="text-gray-600 text-sm">Rigorous testing ensures a bug-free, seamless launch to your live server environment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-24 bg-purple-900 text-white text-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Ready to Deploy Your Vision?</h2>
+          <p className="text-xl text-purple-100 mb-10 leading-relaxed">
+            Let’s discuss how custom software and expert web development can streamline your operations and accelerate your revenue.
+          </p>
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-purple-900 font-bold px-8 py-4 rounded-md hover:bg-purple-50 transition shadow-lg text-lg">
+            Book a Free Technical Consultation
+            <ArrowRight size={20} />
           </Link>
-        </motion.div>
-      </section>
-
-      {/* ABOUT SNIPPET */}
-      <motion.section 
-        initial="initial"
-        whileInView="whileInView"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={fadeInUp}
-        className="max-w-4xl mx-auto px-6 py-24 text-center"
-      >
-        <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-          Welcome to Calvexa Home Living
-        </h2>
-        <p className="text-brand-gray text-lg leading-relaxed">
-          We believe that the environment you live in shapes the way you feel. That is why Calvexa is dedicated to curating premium household items that blend modern aesthetics with everyday practicality. From the kitchen where you create memories to the bedroom where you recharge, we bring warmth, style, and quality to every corner of your home.
-        </p>
-      </motion.section>
-
-      {/* CATEGORIES */}
-      <section className="bg-brand-navy/30 py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={fadeInUp}
-          >
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-center mb-6">
-              Explore Your Home's Potential
-            </h2>
-            <p className="text-brand-gray text-center mb-16 text-lg">
-              Find exactly what you need to refresh your space.
-            </p>
-          </motion.div>
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {categories.map((c) => (
-              <motion.div
-                variants={staggerItem}
-                key={c.title}
-                className="border border-white/10 p-6 hover:border-brand-teal/50 transition-all group rounded-2xl bg-white/2 hover:bg-white/5"
-              >
-                <div className="text-brand-teal mb-4 group-hover:scale-110 transition-transform">
-                  {c.icon}
-                </div>
-                <h3 className="font-display text-xl font-bold mb-3">{c.title}</h3>
-                <p className="text-brand-gray leading-relaxed text-sm">{c.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <motion.h2 
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={fadeInUp}
-          className="font-display text-4xl font-bold text-center mb-16"
-        >
-          The <span className="text-brand-teal">Calvexa Standard</span>
-        </motion.h2>
-        <motion.div 
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-3 gap-8 text-center"
-        >
-          {whyChooseUs.map((item) => (
-            <motion.div variants={staggerItem} key={item.title} className="flex flex-col items-center gap-4">
-              <h3 className="font-display text-xl font-bold">{item.title}</h3>
-              <p className="text-brand-gray text-sm leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="bg-brand-navy/30 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2 
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={fadeInUp}
-            className="font-display text-4xl font-bold text-center mb-16"
-          >
-            How Calvexa Works
-          </motion.h2>
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true, margin: "-50px" }}
-            className="space-y-8"
-          >
-            {process.map((p) => (
-              <motion.div variants={staggerItem} key={p.step} className="flex gap-8 items-start border-b border-white/10 pb-8">
-                <span className="font-display text-5xl font-bold text-brand-teal/40 shrink-0">
-                  {p.step}
-                </span>
-                <div>
-                  <h3 className="font-display text-2xl font-bold mb-2">{p.title}</h3>
-                  <p className="text-brand-gray leading-relaxed">{p.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <motion.section 
-        initial="initial"
-        whileInView="whileInView"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={fadeInUp}
-        className="py-32 px-6 text-center"
-      >
-        <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">
-          Ready to Refresh Your Space?
-        </h2>
-        <p className="text-brand-gray max-w-xl mx-auto mb-10 text-lg">
-          Join thousands of happy homeowners who have transformed their spaces with Calvexa.
-        </p>
-        <Link
-          href="/shop"
-          className="bg-brand-teal text-brand-dark px-10 py-4 uppercase tracking-widest text-sm font-bold hover:bg-brand-teal-light transition-all inline-block rounded-full"
-        >
-          View Best Sellers
-        </Link>
-      </motion.section>
-
-    </main>
+    </div>
   );
 }

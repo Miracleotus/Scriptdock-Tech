@@ -1,4 +1,4 @@
-export default function Services() {
+export default function ServicesPage() {
   return (
     <main className="container mx-auto px-4 py-16 max-w-5xl space-y-16">
       <div className="text-center max-w-3xl mx-auto">

@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ShoppingCart, Home } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,7 +15,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { totalItems } = useCart();
+  const { cartCount } = useCart();
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10">
@@ -24,9 +23,6 @@ export default function Navbar() {
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-linear-to-br from-brand-teal to-brand-teal/60 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-            <Home size={24} className="text-brand-dark" />
-          </div>
           <span className="font-display text-xl font-bold tracking-tight bg-linear-to-r from-brand-teal to-brand-teal/80 bg-clip-text text-transparent">
             CALVEXA
           </span>
@@ -47,9 +43,9 @@ export default function Navbar() {
           {/* Cart Icon */}
           <Link href="/cart" className="relative text-brand-gray hover:text-brand-teal transition-colors">
             <ShoppingCart size={22} />
-            {totalItems > 0 && (
+            {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-brand-teal text-brand-dark text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
+                {cartCount}
               </span>
             )}
           </Link>
@@ -66,9 +62,9 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-4">
           <Link href="/cart" className="relative text-brand-gray">
             <ShoppingCart size={22} />
-            {totalItems > 0 && (
+            {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-brand-teal text-brand-dark text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
+                {cartCount}
               </span>
             )}
           </Link>

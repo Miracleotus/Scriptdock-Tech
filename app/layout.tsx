@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 
 const playfair = Playfair_Display({
@@ -17,8 +17,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Calvexa Home Living | Premium Household Essentials",
-  description: "Discover beautifully crafted, functional household items designed to turn your house into a home you love.",
+  title: "Scriptdock Tech | Enterprise Software & Web Development",
+  description: "Scriptdock Tech delivers enterprise-grade software solutions, scalable web applications, and stunning corporate websites designed to push your business forward.",
 };
 
 export default function RootLayout({
@@ -28,10 +28,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="bg-brand-dark text-white antialiased">
+      <body className="bg-white text-gray-900 antialiased flex flex-col min-h-screen" suppressHydrationWarning>
         <CartProvider>
-          <Navbar />
-          {children}
+          <Header />
+          <div className="grow">
+            {children}
+          </div>
           <Footer />
         </CartProvider>
       </body>

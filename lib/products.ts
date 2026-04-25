@@ -1,147 +1,131 @@
 export type Product = {
-  id: string;
-  sku: string;
   name: string;
-  shortDesc: string;
-  fullDesc: string;
+  shortDescription: string;
+  fullDescription: string;
   price: number;
-  category: "Living Room" | "Decor" | "Kitchenware" | "Bedding" | "Organization" | "Bathroom";
+  sku: string;
+  category: string;
 };
 
 export const products: Product[] = [
   {
-    id: "1",
-    sku: "CVX-LV-001",
-    name: "Aria Velvet Throw Pillow",
-    shortDesc: "Soft, luxurious velvet cushion.",
-    fullDesc: "Add a touch of luxury to your sofa with the Aria Velvet Throw Pillow. Crafted from premium, fade-resistant velvet, it features a hidden zipper and includes a plush, hypoallergenic insert.",
-    price: 24.99,
-    category: "Living Room",
+    name: "Custom Corporate Website",
+    shortDescription: "Professional 5-page business website.",
+    fullDescription: "A fully responsive, SEO-optimized 5-page website tailored to your brand. Includes custom UI/UX design, contact forms, CMS setup, and up to 3 rounds of revisions.",
+    price: 1500.00,
+    sku: "SDT-WEB-01",
+    category: "Web Development"
   },
   {
-    id: "2",
-    sku: "CVX-LV-002",
-    name: "Calvexa Signature Throw Blanket",
-    shortDesc: "Knitted warm throw blanket.",
-    fullDesc: "Snuggle up in style with our chunky knit throw. Made from 100% breathable cotton, this blanket is perfect for all-season comfort and adds rich texture to any bed or couch.",
-    price: 45.00,
-    category: "Living Room",
+    name: "E-Commerce Starter Store",
+    shortDescription: "WooCommerce setup with up to 50 products.",
+    fullDescription: "Launch your online store quickly. Includes secure payment gateway integration, responsive design, up to 50 uploaded products, and inventory management training.",
+    price: 2800.00,
+    sku: "SDT-ECO-01",
+    category: "E-Commerce"
   },
   {
-    id: "3",
-    sku: "CVX-DC-001",
-    name: "Lumière Minimalist Table Lamp",
-    shortDesc: "Sleek, modern desk/table lighting.",
-    fullDesc: "Illuminate your space with the Lumière Table Lamp. Featuring a matte black metal base and a warm fabric shade, it provides the perfect ambient lighting for reading or relaxing.",
-    price: 68.50,
-    category: "Decor",
+    name: "Advanced E-Commerce Architecture",
+    shortDescription: "High-performance custom store for scaling businesses.",
+    fullDescription: "High-performance custom store architecture. Includes advanced product filtering, custom cart/checkout experiences, CRM integration, and abandoned cart systems.",
+    price: 6500.00,
+    sku: "SDT-ECO-02",
+    category: "E-Commerce"
   },
   {
-    id: "4",
-    sku: "CVX-KT-001",
-    name: "Artisan Ceramic Dinner Set (16pcs)",
-    shortDesc: "Hand-glazed dining set for 4.",
-    fullDesc: "Elevate your dining experience with this 16-piece artisan set. Includes dinner plates, salad plates, bowls, and mugs, all featuring a unique, scratch-resistant reactive glaze finish.",
-    price: 110.00,
-    category: "Kitchenware",
+    name: "Custom Web Application",
+    shortDescription: "Bespoke web app built to your specifications.",
+    fullDescription: "End-to-end development of custom web software (e.g., portals, SaaS dashboards). Built using modern stacks (React/Node.js). Includes database architecture and QA.",
+    price: 9500.00,
+    sku: "SDT-APP-01",
+    category: "Software Dev"
   },
   {
-    id: "5",
-    sku: "CVX-KT-002",
-    name: "Bamboo Cutting Board Trio",
-    shortDesc: "Set of 3 sustainable chopping boards.",
-    fullDesc: "Prep meals effortlessly with our eco-friendly bamboo boards. Naturally antimicrobial and knife-friendly, this set includes three versatile sizes with built-in juice grooves.",
-    price: 32.99,
-    category: "Kitchenware",
+    name: "Minimum Viable Product (MVP) Dev",
+    shortDescription: "Rapid prototyping and development for startups.",
+    fullDescription: "Get your startup idea to market fast. We build a functional, scalable MVP of your software within 6-8 weeks to help you secure funding and user feedback.",
+    price: 12000.00,
+    sku: "SDT-MVP-01",
+    category: "Software Dev"
   },
   {
-    id: "6",
-    sku: "CVX-BD-001",
-    name: "Cloud-Soft Egyptian Cotton Sheets",
-    shortDesc: "400-thread count luxury bedsheets.",
-    fullDesc: "Drift into perfect sleep with our 100% Egyptian cotton sheet set. Highly breathable, incredibly soft, and designed to get even softer with every single wash. Includes fitted, flat, and 2 pillowcases.",
-    price: 89.00,
-    category: "Bedding",
+    name: "API Integration Service",
+    shortDescription: "Seamlessly connect third-party tools to your systems.",
+    fullDescription: "We will integrate third-party APIs (payment gateways, CRMs, marketing tools, mapping systems) into your existing website or application securely and efficiently.",
+    price: 850.00,
+    sku: "SDT-API-01",
+    category: "Integration"
   },
   {
-    id: "7",
-    sku: "CVX-DC-002",
-    name: "Zenith Aromatherapy Diffuser",
-    shortDesc: "Ultrasonic essential oil diffuser.",
-    fullDesc: "Transform your home into a spa. The Zenith Diffuser features a sleek ceramic cover, 7 ambient light settings, and ultra-quiet operation to perfectly disperse your favorite scents.",
-    price: 38.00,
-    category: "Decor",
+    name: "Monthly Tech Retainer (Tier 1)",
+    shortDescription: "10 hours of ongoing development and updates.",
+    fullDescription: "Dedicated monthly hours for feature additions, code refactoring, system updates, and priority bug fixing. Unused hours roll over to the next month (up to 30 days).",
+    price: 800.00,
+    sku: "SDT-RET-01",
+    category: "Maintenance"
   },
   {
-    id: "8",
-    sku: "CVX-LV-003",
-    name: "Natura Woven Storage Baskets",
-    shortDesc: "Set of 2 seagrass baskets.",
-    fullDesc: "Keep your space tidy and stylish. Handwoven from natural seagrass, these durable baskets are perfect for storing blankets, toys, or magazines while adding a bohemian touch to your decor.",
-    price: 42.50,
-    category: "Organization",
+    name: "Website Performance Optimization",
+    shortDescription: "Boost your website's loading speed for better UX.",
+    fullDescription: "We optimize images, minify CSS/JS, leverage browser caching, and fine-tune your server to ensure your website loads in under 3 seconds and passes Core Web Vitals.",
+    price: 450.00,
+    sku: "SDT-OPT-01",
+    category: "Web Development"
   },
   {
-    id: "9",
-    sku: "CVX-KT-003",
-    name: "Chef's Choice Stainless Knife Set",
-    shortDesc: "6-piece premium kitchen knives with block.",
-    fullDesc: "Slice and dice like a pro. Forged from high-carbon stainless steel, these precisely weighted knives come nestled in a beautiful acacia wood block for safe, stylish storage.",
-    price: 95.00,
-    category: "Kitchenware",
+    name: "Technical SEO Audit",
+    shortDescription: "Deep dive into your site's technical architecture.",
+    fullDescription: "A comprehensive audit of your website's code, schema markup, mobile-friendliness, and crawlability. Includes an actionable PDF report for your dev team.",
+    price: 600.00,
+    sku: "SDT-SEO-01",
+    category: "Digital Marketing"
   },
   {
-    id: "10",
-    sku: "CVX-BT-001",
-    name: "Plush Memory Foam Bath Mat",
-    shortDesc: "Ultra-absorbent, slip-resistant mat.",
-    fullDesc: "Step out of the shower and onto a cloud. This thick memory foam bath mat absorbs water instantly and features a durable, non-slip rubber backing for ultimate safety.",
-    price: 22.00,
-    category: "Bathroom",
+    name: "Premium Cloud Hosting & Setup (1 Yr)",
+    shortDescription: "High-speed, secure cloud hosting with SSL.",
+    fullDescription: "Managed cloud hosting tailored for web applications. Includes free SSL certificate setup, domain connection, daily automated backups, and caching optimization.",
+    price: 350.00,
+    sku: "SDT-HST-01",
+    category: "Infrastructure"
   },
   {
-    id: "11",
-    sku: "CVX-DC-003",
-    name: "Elegance Glass Vase",
-    shortDesc: "Hand-blown geometric flower vase.",
-    fullDesc: "Display your florals beautifully. This heavy-bottomed, geometrically faceted glass vase catches the light perfectly, making it a stunning centerpiece even when empty.",
-    price: 28.50,
-    category: "Decor",
+    name: "Website Migration Service",
+    shortDescription: "Move your website to a new host with zero downtime.",
+    fullDescription: "Securely transfer your files, databases, and emails to a new hosting provider without losing data, breaking links, or impacting your site's availability.",
+    price: 500.00,
+    sku: "SDT-MIG-01",
+    category: "Infrastructure"
   },
   {
-    id: "12",
-    sku: "CVX-LV-004",
-    name: "Ergo-Rest Lumbar Cushion",
-    shortDesc: "Supportive memory foam back cushion.",
-    fullDesc: "Upgrade your home office or favorite armchair. Our ergonomically designed lumbar cushion promotes proper posture and relieves lower back tension during long periods of sitting.",
-    price: 35.00,
-    category: "Living Room",
+    name: "System Architecture Consultation",
+    shortDescription: "Talk to a senior software architect.",
+    fullDescription: "A focused, 90-minute strategy call to discuss system architecture, technology stacks, project feasibility, or to troubleshoot complex technical roadblocks.",
+    price: 250.00,
+    sku: "SDT-CON-01",
+    category: "Consulting"
   },
   {
-    id: "13",
-    sku: "CVX-KT-004",
-    name: "Cast Iron Dutch Oven (5.5 Qt)",
-    shortDesc: "Enameled heavy-duty cooking pot.",
-    fullDesc: "The ultimate kitchen workhorse. Whether you are baking bread or simmering stews, this enameled cast iron Dutch oven ensures even heat distribution and unmatched durability.",
-    price: 125.00,
-    category: "Kitchenware",
+    name: "UI/UX Wireframing Package",
+    shortDescription: "Visual blueprints for your digital product.",
+    fullDescription: "High-fidelity interactive prototypes. Includes user research, user journey mapping, wireframing, and final UI screens ready for handoff to our developers.",
+    price: 2200.00,
+    sku: "SDT-DES-01",
+    category: "UI/UX Design"
   },
   {
-    id: "14",
-    sku: "CVX-BT-002",
-    name: "Serenity Bamboo Bath Caddy",
-    shortDesc: "Expandable over-tub tray.",
-    fullDesc: "Take your bath to the next level. This water-resistant bamboo caddy holds your book, tablet, wine glass, and soap, adjusting to fit almost any bathtub width perfectly.",
-    price: 48.00,
-    category: "Bathroom",
+    name: "WordPress Security Hardening",
+    shortDescription: "Protect your site from malware and brute-force attacks.",
+    fullDescription: "Implementation of web application firewalls, login rate limiting, database prefix changes, and a complete malware sweep of your current WordPress installation.",
+    price: 400.00,
+    sku: "SDT-SEC-01",
+    category: "Security"
   },
   {
-    id: "15",
-    sku: "CVX-DC-004",
-    name: "Botanica Faux Potted Plant",
-    shortDesc: "Lifelike artificial indoor greenery.",
-    fullDesc: "Bring the outdoors in, zero maintenance required. This highly realistic faux monstera plant comes in a modern ceramic pot, adding an instant pop of life and vibrant green to any dark corner.",
-    price: 55.00,
-    category: "Decor",
-  },
+    name: "Database Migration & Optimization",
+    shortDescription: "Restructure and speed up your database queries.",
+    fullDescription: "We analyze slow databases, write optimized SQL queries, set up proper indexing, and migrate legacy data to modern, scalable database solutions (SQL or NoSQL).",
+    price: 1800.00,
+    sku: "SDT-DAT-01",
+    category: "Software Dev"
+  }
 ];
