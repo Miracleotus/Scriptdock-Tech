@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { CurrencyProvider } from "@/context/CurrencyContext";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -17,8 +18,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Scriptdock Tech | Enterprise Software & Web Development",
-  description: "Scriptdock Tech delivers enterprise-grade software solutions, scalable web applications, and stunning corporate websites designed to push your business forward.",
+  title: "Mayo Digital | Enterprise Software & Web Development",
+  description: "Mayo Digital delivers enterprise-grade software solutions, scalable web applications, and stunning corporate websites designed to push your business forward.",
 };
 
 export default function RootLayout({
@@ -29,13 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="bg-white text-gray-900 antialiased flex flex-col min-h-screen" suppressHydrationWarning>
-        <CartProvider>
-          <Header />
-          <div className="grow">
-            {children}
-          </div>
-          <Footer />
-        </CartProvider>
+        <CurrencyProvider>
+          <CartProvider>
+            <Header />
+            <div className="grow">
+              {children}
+            </div>
+            <Footer />
+          </CartProvider>
+        </CurrencyProvider>
       </body>
     </html>
   );

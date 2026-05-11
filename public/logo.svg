@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" role="img" aria-label="Mayo Digital logo">
+  <!-- Icon: rounded square with MD monogram -->
+  <rect x="0" y="4" width="52" height="52" rx="12" fill="#7C3AED"/>
+  <text x="26" y="38" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="21" font-weight="900" fill="white" letter-spacing="-1">MD</text>
+  <!-- Wordmark -->
+  <text x="64" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" fill="#1a1a2e" letter-spacing="0.5">mayo</text>
+  <text x="64" y="50" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" fill="#7C3AED" letter-spacing="4.5">DIGITAL</text>
+</svg>

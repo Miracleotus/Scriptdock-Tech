@@ -11,7 +11,7 @@ export default function HomePage() {
             Architecting Your Digital Future.
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 mb-10 leading-relaxed">
-            Scriptdock Tech delivers enterprise-grade software solutions, scalable web applications, and stunning corporate websites designed to push your business forward.
+            Mayo Digital delivers enterprise-grade software solutions, scalable web applications, and stunning corporate websites designed to push your business forward.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact" className="bg-white text-purple-900 font-bold px-8 py-4 rounded-md hover:bg-purple-50 transition shadow-lg text-lg">
@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">The Harbor for Your Tech Ideas.</h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            At Scriptdock Tech, we don`t write code; we build digital ecosystems. We bridge the gap between complex engineering and intuitive user experiences. Whether you are a startup looking to launch your first MVP or an established enterprise needing to modernize legacy systems, our team of dedicated engineers provides the technical foundation you need to scale securely.
+            At Mayo Digital, we don&apos;t just write code; we build digital ecosystems. We bridge the gap between complex engineering and intuitive user experiences. Whether you are a startup looking to launch your first MVP or an established enterprise needing to modernize legacy systems, our team of dedicated engineers provides the technical foundation you need to scale securely.
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function HomePage() {
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">The Scriptdock Advantage</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">The Mayo Digital Advantage</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 text-purple-700 flex items-center justify-center rounded-full mx-auto mb-6">
@@ -135,7 +135,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Ready to Deploy Your Vision?</h2>
           <p className="text-xl text-purple-100 mb-10 leading-relaxed">
-            Let’s discuss how custom software and expert web development can streamline your operations and accelerate your revenue.
+            Let&apos;s discuss how custom software and expert web development can streamline your operations and accelerate your revenue.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-purple-900 font-bold px-8 py-4 rounded-md hover:bg-purple-50 transition shadow-lg text-lg">
             Book a Free Technical Consultation

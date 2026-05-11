@@ -3,7 +3,7 @@ export default function RefundPage() {
     <div className="min-h-screen flex flex-col">
       <main className="container mx-auto px-4 py-16 max-w-4xl grow">
         <h1 className="text-4xl font-extrabold mb-8">Refund Policy</h1>
-        
+
         <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
           <section>
             <h2 className="text-2xl font-bold text-black mb-3">1. Custom Development & Services</h2>
@@ -18,6 +18,11 @@ export default function RefundPage() {
           <section>
             <h2 className="text-2xl font-bold text-black mb-3">3. Pre-Packaged Digital Products/Audits</h2>
             <p>If you purchase a digital product (e.g., SEO audit, architecture consultation) through our store, we offer a refund only if the audit has not yet been initiated or the consultation has not yet taken place.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-black mb-3">4. Contact for Refunds</h2>
+            <p>To initiate a refund request, contact us at <a href="mailto:support@mayodigital.com" className="text-purple-700 hover:underline">support@mayodigital.com</a>.</p>
           </section>
         </div>
       </main>

@@ -2,7 +2,7 @@ export default function ContactUs() {
   return (
     <main className="container mx-auto px-4 py-16 max-w-5xl">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Let`s Talk Code.</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Let&apos;s Talk.</h1>
         <p className="text-xl text-gray-600 leading-relaxed">
           Whether you have a fully drafted Request for Proposal (RFP) or just a sketch on a napkin, our technical strategists are ready to help you map out your next steps. Reach out below, and we will get back to you within 24 hours.
         </p>
@@ -12,15 +12,27 @@ export default function ContactUs() {
         <div className="md:col-span-1 space-y-8">
           <div className="bg-purple-50 p-8 rounded-2xl">
             <h3 className="text-xl font-bold mb-4 text-gray-900">Contact Details</h3>
-            <div className="space-y-4 text-gray-600">
-              <p>
-                <strong className="block text-gray-900">Email:</strong> 
-                <a href="mailto:hello@scriptdock.tech" className="text-purple-700 hover:underline">hello@scriptdock.tech</a>
-              </p>
-              <p>
-                <strong className="block text-gray-900">Website:</strong> 
-                <a href="https://scriptdock.tech" className="text-purple-700 hover:underline">www.scriptdock.tech</a>
-              </p>
+            <div className="space-y-5 text-gray-600">
+              <div>
+                <strong className="block text-gray-900 mb-1">Email</strong>
+                <a href="mailto:support@mayodigital.com" className="text-purple-700 hover:underline">support@mayodigital.com</a>
+              </div>
+              <div>
+                <strong className="block text-gray-900 mb-1">Phone</strong>
+                <a href="tel:+234" className="text-purple-700 hover:underline">+234</a>
+              </div>
+              <div>
+                <strong className="block text-gray-900 mb-1">Address</strong>
+                <address className="not-italic leading-relaxed">
+                  Plot 3978 Nuc Quarters Karu,<br />
+                  Abuja Municipal Area Council,<br />
+                  Nigeria
+                </address>
+              </div>
+              <div>
+                <strong className="block text-gray-900 mb-1">Business Hours</strong>
+                <p>Monday – Friday<br />9:00 AM – 6:00 PM WAT</p>
+              </div>
             </div>
           </div>
         </div>
@@ -54,4 +66,3 @@ export default function ContactUs() {
     </main>
   );
 }
- 

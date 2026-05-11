@@ -4,7 +4,7 @@ export default function ServicesPage() {
       <div className="text-center max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Comprehensive Development Capabilities</h1>
         <p className="text-xl text-gray-600 leading-relaxed">
-          From the initial wireframe to the final deployment, Scriptdock Tech handles the entire software development lifecycle.
+          From the initial wireframe to the final deployment, Mayo Digital handles the entire software development lifecycle.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export default function ServicesPage() {
         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
           <h2 className="text-2xl font-bold mb-4 text-purple-900">DevOps & Cloud Infrastructure</h2>
           <p className="text-gray-600 leading-relaxed">
-            Don`t let server crashes cost you money. We migrate, manage, and optimize your applications on top-tier cloud providers like AWS, Google Cloud, and DigitalOcean, ensuring 99.9% uptime and bulletproof security.
+            Don&apos;t let server crashes cost you money. We migrate, manage, and optimize your applications on top-tier cloud providers like AWS, Google Cloud, and DigitalOcean, ensuring 99.9% uptime and bulletproof security.
           </p>
         </div>
       </div>

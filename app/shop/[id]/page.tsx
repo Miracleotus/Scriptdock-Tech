@@ -2,26 +2,27 @@
 
 import { useParams } from "next/navigation";
 import { products } from "@/lib/products";
-import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import Link from "next/link";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
 
 export default function ProductPage() {
   const params = useParams();
   const productId = params.id as string;
-  const product = products.find(p => p.id === productId);
+  const product = products.find(p => p.sku === productId);
   const { addToCart } = useCart();
+  const { formatPrice, currency } = useCurrency();
 
   if (!product) {
     return (
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Product Not Found</h1>
-          <p className="text-white/60 mb-8">The product you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/shop"
-            className="bg-brand-teal text-brand-dark px-6 py-3 font-semibold rounded-full hover:bg-brand-teal-light transition"
+            className="bg-purple-700 text-white px-6 py-3 font-semibold rounded-full hover:bg-purple-800 transition"
           >
             Back to Shop
           </Link>
@@ -30,57 +31,56 @@ export default function ProductPage() {
     );
   }
 
-  const handleAddToCart = () => {
-    addToCart(product);
-  };
-
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
       <Link
         href="/shop"
-        className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-8 transition"
+        className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 mb-8 transition"
       >
         <ArrowLeft size={16} />
         Back to Shop
       </Link>
 
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Product Image Placeholder */}
-        <div className="aspect-square bg-white/5 rounded-2xl flex items-center justify-center">
-          <div className="text-white/40 text-center">
-            <div className="w-24 h-24 bg-brand-teal/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <ShoppingCart size={32} />
+        {/* Product Icon Placeholder */}
+        <div className="aspect-square bg-purple-50 rounded-2xl flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <ShoppingCart size={32} className="text-purple-700" />
             </div>
-            <p>Product Image</p>
+            <p className="text-purple-400 font-medium">{product.category}</p>
           </div>
         </div>
 
         {/* Product Details */}
         <div className="space-y-6">
           <div>
-            <span className="text-xs text-brand-teal uppercase tracking-widest">{product.category}</span>
-            <h1 className="text-3xl font-bold mt-2 mb-4">{product.name}</h1>
-            <p className="text-white/60">{product.shortDesc}</p>
+            <span className="text-xs text-purple-600 uppercase tracking-widest font-bold">{product.category}</span>
+            <h1 className="text-3xl font-bold mt-2 mb-4 text-gray-900">{product.name}</h1>
+            <p className="text-gray-600">{product.shortDescription}</p>
           </div>
 
-          <div className="text-4xl font-bold text-brand-teal">
-            {formatPrice(product.price)}
+          <div>
+            <div className="text-4xl font-bold text-purple-700">
+              {formatPrice(product.price)}
+            </div>
+            {currency === 'NGN' && (
+              <p className="text-xs text-gray-500 mt-1">Exchange rate: 1 USD = 1,600 NGN</p>
+            )}
           </div>
 
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold">Description</h2>
-            <p className="text-white/80 leading-relaxed">{product.fullDesc}</p>
+          <div className="space-y-3">
+            <h2 className="text-xl font-semibold text-gray-900">Description</h2>
+            <p className="text-gray-600 leading-relaxed">{product.fullDescription}</p>
           </div>
 
-          <div className="space-y-2">
-            <p className="text-sm text-white/60">
-              <span className="font-semibold">SKU:</span> {product.sku}
-            </p>
-          </div>
+          <p className="text-sm text-gray-500">
+            <span className="font-semibold">SKU:</span> {product.sku}
+          </p>
 
           <button
-            onClick={handleAddToCart}
-            className="w-full bg-brand-teal text-brand-dark py-4 font-bold rounded-full hover:bg-brand-teal-light transition flex items-center justify-center gap-2"
+            onClick={() => addToCart(product)}
+            className="w-full bg-purple-700 text-white py-4 font-bold rounded-full hover:bg-purple-600 transition flex items-center justify-center gap-2"
           >
             <ShoppingCart size={20} />
             Add to Cart
